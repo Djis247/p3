@@ -1,0 +1,101 @@
+/*calendar 1*/
+#datepicker1 {
+  width: 30rem;
+  font-family: 'Times New Roman', Times, serif;
+  padding: .2rem;
+  background-color: #fff;
+  margin: .2rem;
+}
+
+/*calendar 2*/
+#datepicker2 {
+  width: 30rem;
+  font-family: 'Times New Roman', Times, serif;
+  padding: .2rem;
+  background-color: yellow;
+  margin: .2rem;
+}
+
+.datepickerHeader {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.datepickerHeader button {
+  background-color: green;
+  color: #fff;
+  border-color: red;
+  cursor: pointer;
+}
+
+.datepickerMonthYearLabel {
+  font-size: 1.2rem;
+  font-weight: 600
+}
+
+.datepickerDayLabels {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 5px 0;
+}
+
+#datepicker2 .datepickerDayLabels {
+  display: flex;
+  justify-content: space-between;
+  background-color: yellow;
+  padding: 5px 0;
+}
+
+.datepickerDayLabel {
+  text-align: center;
+  flex: 1px;
+}
+
+#datepicker2 .datepickerDayLabel{
+  text-align: center;
+  flex: 1;
+  color: red;
+}
+
+.datepickerGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.datepickerDay {
+  text-align: center;
+  padding: 5px;
+}
+
+.datepickerDayEmpty {
+  text-align: center;
+  padding: 5px;
+}
+
+.grayed-out {
+    color: gray;
+    background-color: #9f9d9d;
+}
+
+.datepickerDayEmpty.grayed-out:hover {
+    cursor: none;
+}
+
+#datepicker1 .datepickerDay:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+#datepicker2 .datepickerDay:hover {
+  background-color: purple;
+  cursor: pointer;
+}
+
+
+
+
+
