@@ -8,20 +8,23 @@ class TableTemplate {
 
     let columnIndex;
     // Find matching column in table
-    console.log(table.rows[0].getElementsByTagName("td"));
-
-    for (let i = 0; i < table.rows[0].getElementsByTagName("td"); i++) {
-      console.log("row", table.rows[0][i].innerHTML);
-      if (table.rows[0][i].innerText == colName) {
+    for (let i = 0; i < table.rows[0].getElementsByTagName("td").length; i++) {
+      if (table.rows[0].getElementsByTagName("td")[i].innerHTML == colName) {
         columnIndex = i;
       }
     }
 
     // Iterate through table rows and update td that match columnIndex
-    for (let i = 1; i < table.rows.length; i++) {}
+    for (let i = 1; i < table.rows.length; i++) {
+      const tableData = table.rows[i].getElementsByTagName("td")[columnIndex];
+
+      //   console.log("table data to process", tableData.innerHTML);
+      if (!tableData || !tableData.innerHTML) return;
+
+      let process = new TemplateProcessor(tableData.innerHTML);
+      table.rows[i].getElementsByTagName("td")[columnIndex].innerHTML =
+        process.fillIn(dict);
+    }
+    table.style.visibility = "visible";
   }
 }
-//to do: search for columnid using columnName
-//for loop going through the first row loop through elements
-//another for loop to loop through rows but only to acces that first specific column
-//use column id as part of expressions.
